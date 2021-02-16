@@ -1,18 +1,25 @@
-variable "AWS_REGION" {
-  type = string
-  default = "ap-southeast-1"
+variable "INSTANCE_COUNT" {
+  description = "jumlah instance yang akan di deploy"
+  type = number
+  default = 1
 }
 
-variable "AWS_AMIS" {
-  type = map(string)
-  description = "amis id"
-  default = {
-    ap-southeast-1 = "ami-0c20b8b385217763f"
-  }
+variable "AMI" {
+  description = "ami id"
+  type = string
 }
 
-variable "AWS_INSTANCE_TYPE" {
+variable "INSTANCE_TYPE" {
+  description = "tipe instance"
   type = string
-  description = "type of aws ec2 instance"
-  default = "t2.micro"
+}
+
+variable "SECURITY_GROUPS" {
+  description = "list of security group"
+  type = list
+}
+
+variable "KEYNAME" {
+  description = "key name"
+  type = string
 }
